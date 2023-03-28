@@ -1,0 +1,10 @@
+server:
+  port: 9000
+
+vhost:
+  master-host: 127.0.0.1  #主控IP
+  master-port: 8080 #主控端口
+  token: e10adc3949ba59abbe56e057f20f883e #主控后台生成的token
+  enableHeartbeat: true #是否启用心跳监测 默认开启
+  heartbeatInterval: 20000  #心跳监测间隔 默认20000毫秒
+  enableReconnection: true  #是否启用重连接 默认启用

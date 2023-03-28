@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: vhostProbe
+vhost:
+  master-host: 127.0.0.1
+  master-port: 9000
+  token: e10adc3949ba59abbe56e057f20f883e
+  enableHeartbeat: true
+  heartbeatInterval: 20000
+  enableReconnection: true
+
+chuqiyun:
+  websocket:
+    client:
+      config:
+        - wsUrl: ws://${vhost.master-host}:${vhost.master-port}/ws/vhost/${vhost.token}
+          wsName: ${vhost.token}
+          enableHeartbeat: ${vhost.enableHeartbeat}
+          heartbeatInterval: ${vhost.heartbeatInterval}
+          enableReconnection: ${vhost.enableReconnection}
+server:
+  port: 9000
